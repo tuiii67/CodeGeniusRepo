@@ -1,16 +1,6 @@
-function combine(n, k) {
-  const result = [];
-  backtrack(1, []);
-  return result;
-  function backtrack(start, current) {
-    if (current.length === k) {
-      result.push([...current]);
-      return;
-    }
-    for (let i = start; i <= n; i++) {
-      current.push(i);
-      backtrack(i + 1, current);
-      current.pop();
-    }
+const gcdRecursive = (a, b) => {
+  if (b === 0) {
+    return a;
   }
-}
+  return gcdRecursive(b, a % b);
+};
